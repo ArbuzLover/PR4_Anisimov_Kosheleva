@@ -9,17 +9,17 @@
       Title="Page1" Background="#FFB3C5D9">
 
     <Grid>
-        <Image HorizontalAlignment="Center" Source="/Images/Zadan1.png" Margin="0,100,0,0" VerticalAlignment="Top" Width="400"/>
-        <TextBlock  Margin="239,0,0,0" Text="X" VerticalAlignment="Center"/>
-        <TextBox  Margin="252,0,499,0" x:Name="X"  VerticalAlignment="Center" Width="50"/>
-        <TextBlock  Margin="315,0,1,0"  Text="Y" VerticalAlignment="Center"/>
-        <TextBox    VerticalAlignment="Center" x:Name="Y" Width="50" Margin="326,0,425,0"/>
-        <TextBlock  Margin="400,0,0,0"  Text="Z" VerticalAlignment="Center"/>
-        <TextBox    VerticalAlignment="Center" x:Name="Z" Width="50" Margin="410,0,340,0"/>
-        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="331,241,0,0" VerticalAlignment="Top" Click="Button_Click" />
-        <Button Content="Очистить" HorizontalAlignment="Left" Margin="405,241,0,0" VerticalAlignment="Top" Click="Button_Click_1" />
-        <TextBlock  Margin="239,242,0,0"  Text="Ответ:" VerticalAlignment="Top"/>
-        <TextBox  Margin="276,242,474,0"  x:Name="Answer"  VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+        <Image HorizontalAlignment="Center" Source="/Images/Zadan1.png" Margin="0,100,0,0" VerticalAlignment="Top" Width="400" ToolTip="Формула" />
+        <TextBlock  Margin="239,0,526,0" Text="X" VerticalAlignment="Center"/>
+        <TextBox  Margin="248,0,499,0" x:Name="X"  VerticalAlignment="Center" PreviewTextInput="TextBox_OnPreviewTextInput" ToolTip="Введите значение"/>
+        <TextBlock  Margin="315,0,448,0"  Text="Y" VerticalAlignment="Center"/>
+        <TextBox    VerticalAlignment="Center" x:Name="Y" Margin="324,0,419,0" PreviewTextInput="TextBox_OnPreviewTextInput" ToolTip="Введите значение"/>
+        <TextBlock  Margin="397,0,366,0"  Text="Z" VerticalAlignment="Center"/>
+        <TextBox    VerticalAlignment="Center" x:Name="Z" Margin="408,0,340,0" PreviewTextInput="TextBox_OnPreviewTextInput" ToolTip="Введите значение(в радианах)"/>
+        <Button Content="Вычислить"  Margin="334,241,384,0" VerticalAlignment="Top" Click="Button_Click" ToolTip="Нажмите"/>
+        <Button Content="Очистить"  Margin="434,240,292,0" VerticalAlignment="Top" Click="Button_Click_1" ToolTip="Нажмите"/>
+        <TextBlock  Margin="159,244,562,0"  Text="Ответ:" VerticalAlignment="Top"/>
+        <TextBox  Margin="200,242,474,0"  x:Name="Answer"  VerticalAlignment="Top" IsEnabled="False" ToolTip="Результат вычислений"/>
 
     </Grid>
 </Page>

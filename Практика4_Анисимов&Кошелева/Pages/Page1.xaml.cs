@@ -27,7 +27,26 @@ namespace Практика4_Анисимов_Кошелева.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (X.Text.Length > 0 & Y.Text.Length > 0 & Z.Text.Length > 0)
+            {
+                double x = Convert.ToDouble(X.Text);
+                double y = Convert.ToDouble(Y.Text);
+                double z = Convert.ToDouble(Z.Text);
 
+
+                double firstPart = Math.Pow(2, -x);
+                double fourthRootY = Math.Pow(Math.Abs(y), 1.0 / 4.0);
+                double expXminus1 = Math.Exp(x - 1);
+                double sinZ = Math.Sin(z);
+                double divisionResult = expXminus1 / sinZ;
+                double cubeRoot = Math.Pow(divisionResult, 1.0 / 3.0);
+                double product = fourthRootY * cubeRoot;
+                double sum = x + product;
+                double sqrtPart = Math.Sqrt(sum);
+                double result = firstPart * sqrtPart;
+                Answer.Text = $"{result}";
+            }
+            else MessageBox.Show("Введите все значения");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -36,6 +55,13 @@ namespace Практика4_Анисимов_Кошелева.Pages
             Y.Text = "";
             Z.Text = "";
             Answer.Text = "";
+        }
+        
+
+
+        private void TextBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.Text[0]);
         }
     }
 }
