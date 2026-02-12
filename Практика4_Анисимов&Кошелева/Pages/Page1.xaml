@@ -1,0 +1,25 @@
+﻿<Page x:Class="Практика4_Анисимов_Кошелева.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Практика4_Анисимов_Кошелева.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page1" Background="#FFB3C5D9">
+
+    <Grid>
+        <Image HorizontalAlignment="Center" Source="/Images/Zadan1.png" Margin="0,100,0,0" VerticalAlignment="Top" Width="400"/>
+        <TextBlock  Margin="239,0,0,0" Text="X" VerticalAlignment="Center"/>
+        <TextBox  Margin="252,0,499,0" x:Name="X"  VerticalAlignment="Center" Width="50"/>
+        <TextBlock  Margin="315,0,1,0"  Text="Y" VerticalAlignment="Center"/>
+        <TextBox    VerticalAlignment="Center" x:Name="Y" Width="50" Margin="326,0,425,0"/>
+        <TextBlock  Margin="400,0,0,0"  Text="Z" VerticalAlignment="Center"/>
+        <TextBox    VerticalAlignment="Center" x:Name="Z" Width="50" Margin="410,0,340,0"/>
+        <Button Content="Вычислить" HorizontalAlignment="Left" Margin="331,241,0,0" VerticalAlignment="Top" Click="Button_Click" />
+        <Button Content="Очистить" HorizontalAlignment="Left" Margin="405,241,0,0" VerticalAlignment="Top" Click="Button_Click_1" />
+        <TextBlock  Margin="239,242,0,0"  Text="Ответ:" VerticalAlignment="Top"/>
+        <TextBox  Margin="276,242,474,0"  x:Name="Answer"  VerticalAlignment="Top" Width="50" IsEnabled="False"/>
+
+    </Grid>
+</Page>

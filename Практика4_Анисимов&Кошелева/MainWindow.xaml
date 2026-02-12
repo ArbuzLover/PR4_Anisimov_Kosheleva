@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Практика4_Анисимов_Кошелева"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Практическая работа 4 Анисимов и Кошелева" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Вернуться назад" x:Name="BackButton" Click="BackButton_OnClick" Width="100" Height="20" HorizontalAlignment="Left" />
+        <Frame Source="Pages/MainPage.xaml"  NavigationUIVisibility="Hidden" Navigated="MainFrame_OnNavigated" Grid.Row="1" x:Name="MainFrame"></Frame>
     </Grid>
 </Window>

@@ -24,5 +24,18 @@ namespace Практика4_Анисимов_Кошелева
         {
             InitializeComponent();
         }
+        private void MainFrame_OnNavigated(object sender, NavigationEventArgs e)
+        {
+            BackButton.Visibility = MainFrame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
+        }
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.CanGoBack)
+            {
+                MainFrame.GoBack();
+
+
+            }
+        }
     }
 }
