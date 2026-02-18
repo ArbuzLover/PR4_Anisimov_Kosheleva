@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -52,7 +53,13 @@ namespace Практика4_Анисимов_Кошелева.Pages
 
         private void TextBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.Text[0]);
+            var textBox = sender as System.Windows.Controls.TextBox;
+            string newText = textBox.Text.Insert(textBox.CaretIndex, e.Text);
+
+            // Регулярное выражение для проверки double числа
+            // Разрешает: цифры, один минус в начале, одну точку
+            Regex regex = new Regex(@"^-?\d*\.?\d*$");
+            e.Handled = !regex.IsMatch(newText);
         }
     }
 }
