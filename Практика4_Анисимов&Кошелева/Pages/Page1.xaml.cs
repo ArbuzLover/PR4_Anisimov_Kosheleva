@@ -25,20 +25,28 @@ namespace Практика4_Анисимов_Кошелева.Pages
         {
             InitializeComponent();
         }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (X.Text.Length > 0 & Y.Text.Length > 0 & Z.Text.Length > 0)
+            Calculate(X.Text, Y.Text, Z.Text);
+        }
+
+        private bool Calculate(string X, string Y, string Z)
+        {
+            if (X.Length > 0 & Y.Length > 0 & Z.Length > 0)
             {
-                double x = Convert.ToDouble(X.Text);
-                double y = Convert.ToDouble(Y.Text);
-                double z = Convert.ToDouble(Z.Text);
+                double x = Convert.ToDouble(X);
+                double y = Convert.ToDouble(Y);
+                double z = Convert.ToDouble(Z);
 
 
-                
+
                 Answer.Text = $"{Math.Pow(2, -x) * Math.Sqrt(x + Math.Pow(Math.Abs(y), 1.0 / 4.0) * Math.Pow(Math.Exp(x - 1) / Math.Sin(z), 1.0 / 3.0))}";
+                return true;
             }
-            else MessageBox.Show("Введите все значения");
+            else { MessageBox.Show("Введите все значения"); return false; }
+           
+           
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
